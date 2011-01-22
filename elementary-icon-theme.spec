@@ -55,5 +55,3 @@ rm -rf %buildroot
 %defattr(-,root,root)
 %doc AUTHORS CONTRIBUTORS COPYING
 %{_iconsdir}/%{theme_name}/*
-
-
