@@ -1,4 +1,3 @@
-%define distsuffix edm
 %define base_name	icon-theme
 %define theme_name	elementary
 %define version		2.4
