@@ -1,56 +1,43 @@
 %define base_name	icon-theme
 %define theme_name	elementary
-%define version		2.4
-%define name		%{theme_name}-%{base_name}
-%define release		%mkrel 1
 
-Name:			%{name}
-Version:		%{version}
-Release:		%{release}
+Name:			%{theme_name}-%{base_name}
+Version:		2.7.1
+Release:		%mkrel 1
 Summary:		Elementary icons for GNOME Desktop
 License:		GPLv2+
 Group:			Graphical desktop/GNOME
-Source:			http://launchpad.net/elementaryicons/2.0/%{version}/+download/%{theme_name}.tar.bz2
+Source:			http://launchpad.net/elementaryicons/2.0/%{version}/+download/%{name}-%{version}.tar.gz
 URL:			https://launchpad.net/elementaryicons
 BuildRequires: 		icon-naming-utils
-BuildArch: noarch
-
 Requires:		hicolor-icon-theme
-
-%ifarch i586
-Requires:		libmurrine >= 0.91.0
-%endif
-
-%ifarch x86_64
-Requires: lib64murrine >= 0.91.0
-%endif
-
-Requires: faenza-icon-theme
-BuildRoot: %{_tmppath}/%{name}-buildroot
+Requires:		faenza-icon-theme
+BuildArch:		noarch
 
 %description
 Elementary icons is an icon theme designed to be smooth,
 sexy, clear, and efficient.
 
 %prep
-rm -rf %buildroot
-%setup -q -n %{theme_name}
+%setup -q -n %{name}/%{theme_name}
 
 %build
 
 %install
-%{__mkdir} -p %{buildroot}%{_iconsdir}/%{theme_name}
-%{__cp} -Rf * %{buildroot}%{_iconsdir}/%{theme_name}/
+rm -rf %{buildroot}
+mkdir -p %{buildroot}%{_iconsdir}/%{theme_name}
+cp -Rf * %{buildroot}%{_iconsdir}/%{theme_name}/
 
 %clean
-rm -rf %buildroot
+rm -rf %{buildroot}
 
 %post
-%{update_icon_cache}
+%update_icon_cache %{_iconsdir}/%{theme_name}/
+
 %postun
-%{clean_icon_cache}
+%clean_icon_cache %{_iconsdir}/%{theme_name}/
 
 %files
-%defattr(-,root,root)
 %doc AUTHORS CONTRIBUTORS COPYING
-%{_iconsdir}/%{theme_name}/*
+%{_iconsdir}/%{theme_name}
+
