@@ -41,3 +41,18 @@ rm -rf %{buildroot}
 %doc AUTHORS CONTRIBUTORS COPYING
 %{_iconsdir}/%{theme_name}
 
+
+
+%changelog
+* Mon May 28 2012 Andrey Bondrov <abondrov@mandriva.org> 2.7.1-1mdv2012.0
++ Revision: 800935
+- New version 2.7.1, spec cleanup
+
+* Sat Jan 22 2011 Александр Казанцев <kazancas@mandriva.org> 2.4-1
++ Revision: 632360
+- initial release for Mandriva
+- import elementary-icon-theme
+
+
+* Sat Jan 22 2010 Alexander Kazancev <kazancas@mandriva.org>
+- initial release for Mandriva
