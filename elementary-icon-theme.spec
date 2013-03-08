@@ -1,15 +1,15 @@
-%define base_name	icon-theme
-%define theme_name	elementary
+%define base_name icon-theme
+%define theme_name elementary
 
-Name:			%{theme_name}-%{base_name}
-Version:		2.7.1
-Release:		%mkrel 1
-Summary:		Elementary icons for GNOME Desktop
-License:		GPLv2+
-Group:			Graphical desktop/GNOME
-Source:			http://launchpad.net/elementaryicons/2.0/%{version}/+download/%{name}-%{version}.tar.gz
-URL:			https://launchpad.net/elementaryicons
-BuildRequires: 		icon-naming-utils
+Name:		%{theme_name}-%{base_name}
+Version:	2.7.1
+Release:	2
+Summary:	Elementary icons for GNOME Desktop
+License:	GPLv2+
+Group:		Graphical desktop/GNOME
+Source0:	http://launchpad.net/elementaryicons/2.0/%{version}/+download/%{name}-%{version}.tar.gz
+URL:		https://launchpad.net/elementaryicons
+BuildRequires:	icon-naming-utils
 Requires:		hicolor-icon-theme
 Requires:		faenza-icon-theme
 BuildArch:		noarch
