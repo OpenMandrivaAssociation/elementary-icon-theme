@@ -3,7 +3,7 @@
 
 Name:		%{theme_name}-%{base_name}
 Version:	2.7.1
-Release:	2
+Release:	3
 Summary:	Elementary icons for GNOME Desktop
 License:	GPLv2+
 Group:		Graphical desktop/GNOME
